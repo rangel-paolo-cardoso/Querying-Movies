@@ -32,8 +32,6 @@ public class Movie {
             int releaseYear,
             Set<String> categories,
             Set<String> directors,
-            Set<String> actors,
-            Set<String> characters,
             Map<String, Set<String>> actorsPerCharacter) {
         this.title = title;
         this.releaseYear = releaseYear;
