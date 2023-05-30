@@ -16,6 +16,17 @@ public class Movie {
     public final Set<String> characters;
     public final Map<String, Set<String>> actorsPerCharacter;
 
+    /**
+     * Build an object that represents a Movie.
+     * 
+     * @param title - the title of the Movie.
+     * @param releaseYear - release year of the Movie.
+     * @param categories - the categories which the Movie belongs to.
+     * @param directors - the directors of the Movie.
+     * @param actors - the actors who acted in the Movie.
+     * @param characters - the characters played by the actors.
+     * @param actorsPerCharacter - a map containing a set of actors categorized by characters.
+     */
     public Movie(
             String title,
             int releaseYear,
