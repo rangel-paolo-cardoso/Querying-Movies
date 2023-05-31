@@ -84,6 +84,27 @@ public class Movies {
             .character("Stephen", "Samuel L. Jackson")
             .build();
 
+    public static final Movie inglouriousBasterds = new MovieBuilder("Inglourious Basterds", 2009)
+            .categories("Drama", "Action", "Thriller", "War")
+            .directors("Quentin Tarantino")
+            .character("First Lieutenant Aldo 'The Apache' Raine", "Brad Pitt")
+            .character("Shosanna Dreyfus / Emmanuelle Mimieux", "Mélanie Laurent")
+            .character("SS Colonel Hans 'The Jew Hunter' Landa", "Christoph Waltz")
+            .character("Staff Sergeant Donny 'The Bear Jew' Donowitz", "Eli Roth")
+            .character("Lieutenant Archie Hicox", "Michael Fassbender")
+            .character("Bridget von Hammersmark", "Diane Kruger")
+            .build();
+
+    public static final Movie braveheart = new MovieBuilder("Braveheart", 1995)
+            .categories("Action", "Drama", "History", "War")
+            .directors("Mel Gibson")
+            .character("William Wallace", "Mel Gibson")
+            .character("Murron MacClannough", "Catherine McCormack")
+            .character("Princess Isabelle", "Sophie Marceau")
+            .character("King Edward", "Patrick McGoohan")
+            .character("Robert the Bruce", "Angus Macfadyen")
+            .build();
+
     /**
      * @return
      */
@@ -96,6 +117,8 @@ public class Movies {
                 dontLookUp,
                 avengersEndgame,
                 pulpFiction,
-                djangoUnchained);
+                djangoUnchained,
+                inglouriousBasterds,
+                braveheart);
     }
 }
