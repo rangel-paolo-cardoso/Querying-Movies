@@ -32,12 +32,70 @@ public class Movies {
             .character("Dr. Otto Octavius / Doutor Octopus", "Alfred Molina")
             .build();
 
+    public static final Movie matrixResurrections = new MovieBuilder("Matrix Resurrections", 2021)
+            .categories("SiFi", "Action", "Adventure")
+            .directors("Lana Wachowski")
+            .character("Thomas A. Anderson / Neo", "Keanu Reeves")
+            .character("Tiffany / Trinity", "Carrie-Anne Moss")
+            .character("Morpheus", "Yahya Abdul-Mateen II")
+            .character("Smith", "Jonathan Groff")
+            .character("The Analyst", "Neil Patrick Harris")
+            .build();
+
+    public static final Movie dontLookUp = new MovieBuilder("Don't Look Up", 2021)
+            .categories("Comedy", "Drama", "SiFi")
+            .directors("Adam McKay")
+            .character("Kate Dibiasky", "Jennifer Lawrence")
+            .character("Dr. Randall Mindy", "Leonardo DiCaprio")
+            .character("President Orlean", "Meryl Streep")
+            .character("Dr. Teddy Oglethorpe", "Rob Morgan")
+            .build();
+
+    public static final Movie avengersEndgame = new MovieBuilder("Avengers: Endgame", 2019)
+            .categories("Adventure", "SiFi", "Action")
+            .directors("Joe Russo", "Anthony Russo")
+            .character("Tony Stark / Homem de Ferro", "Robert Downey Jr.")
+            .character("Steve Rogers / Capitão América", "Chris Evans")
+            .character("Bruce Banner / Hulk", "Mark Ruffalo")
+            .character("Thor Odinson", "Chris Hemsworth")
+            .character("Natasha Romanoff / Viúva Negra", "Scarlett Johansson")
+            .character("Clint Barton / Gavião Arqueiro", "Jeremy Renner")
+            .character("Thanos", "Josh Brolin")
+            .build();
+
+    public static final Movie pulpFiction = new MovieBuilder("Pulp Fiction", 1994)
+            .categories("Thriller", "Criminal")
+            .directors("Quentin Tarantino")
+            .character("Vincent Vega", "John Travolta")
+            .character("Jules Winnfield", "Samuel L. Jackson")
+            .character("Mia Wallace", "Uma Thurman")
+            .character("Butch Coolidge", "Bruce Willis")
+            .character("Marsellus Wallace", "Ving Rhames")
+            .character("Winston 'The Wolf' Wolfe", "Harvey Keitel")
+            .build();
+
+    public static final Movie djangoUnchained = new MovieBuilder("Django Unchained", 2012)
+            .categories("Drama", "Western")
+            .directors("Quentin Tarantino")
+            .character("Django Freeman", "Jamie Foxx")
+            .character("Dr. King Schultz", "Christoph Waltz")
+            .character("Calvin J. Candie", "Leonardo DiCaprio")
+            .character("Broomhilda von Shaft", "Kerry Washington")
+            .character("Stephen", "Samuel L. Jackson")
+            .build();
+
     /**
      * @return
      */
     public static Set<Movie> all() {
         return Set.of(
-            spaceJam2021,
-        );
+                spaceJam2021,
+                beingJohnMalkovich,
+                spiderManNoWayHome,
+                matrixResurrections,
+                dontLookUp,
+                avengersEndgame,
+                pulpFiction,
+                djangoUnchained);
     }
 }
