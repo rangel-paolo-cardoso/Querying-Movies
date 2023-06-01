@@ -127,6 +127,8 @@ public class Movies {
                         .build();
 
         /**
+         * Provieds a set of movies. The data is not complete, but is sufficient to test the challenge queries.
+         * 
          * @return
          */
         public static Set<Movie> all() {
