@@ -18,6 +18,12 @@ public class Query2Test {
         testQuery(emptySet(), "Malcolm D. Lee", emptyList());
     }
 
+    @Test
+    @DisplayName("Query 2 - the query must return an empty list when no actor fulfills the requirement")
+    public void noActorFulfillsTheRequirement() {
+        testQuery(Movies.all(), "(director not included)", emptyList());
+    }
+
     private static void testQuery(
         Collection<Movie> movies,
         String ditector,
