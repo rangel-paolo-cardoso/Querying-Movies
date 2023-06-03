@@ -19,6 +19,15 @@ public class Query3Test {
         testQuery(emptySet(), emptyList());
     }
 
+    @Test
+    @DisplayName("Query 3 - the query must return an empty list when no movie fulfills the requirement")
+    public void noMovieFulfillsTheRequirement() {
+        testQuery(
+            Set.of(Movies.spaceJam2021, Movies.spiderManNoWayHome, Movies.djangoUnchained),
+            emptyList()
+        );
+    }
+
     private static void testQuery(Collection<Movie> movies, List<Movie> expectedOutput) {
         Queries queries = new Queries(movies);
         List<Movie> actualOutput = queries.moviesInWhichAtLeastOneDirectorActedMostRecentFirst();
