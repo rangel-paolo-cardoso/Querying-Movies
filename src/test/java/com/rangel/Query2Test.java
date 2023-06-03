@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -46,6 +47,18 @@ public class Query2Test {
                         "Samuel L. Jackson",
                         "Uma Thurman",
                         "Ving Rhames"));
+    }
+
+    @Test
+    @DisplayName("Query 2 - no actor must appear more than once on the result list")
+    public void noDuplicateItems() {
+        Set<Movie> movies = Set.of(Movies.pulpFiction, Movies.djangoUnchained);
+        Queries queries = new Queries(movies);
+        List<String> results = queries.ActorsWhoActedInDirectorsMoviesAlphabetically("Quentin Tarantino");
+
+        long countingSamuelJackson = results.stream()
+                .filter(actor -> actor.equals("Samuel L. Jackson"))
+                .count();
     }
 
     private static void testQuery(
