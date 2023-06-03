@@ -17,6 +17,17 @@ public class Query1Test {
         testQuery(emptySet(), emptySet());
     }
 
+    @Test
+    @DisplayName(
+        "Query 1 - the query must return an empty set when no actor fulfills the requirement"
+    )
+    public void noActorFulfillsTheRequirement() {
+        testQuery(
+            Set.of(Movies.avengersEndgame, Movies.matrixResurrections, Movies.inglouriousBasterds),
+            emptySet()
+        );
+    }
+
     private static void testQuery(Collection<Movie> movies, Set<String> expectedOutput) {
         Queries queries = new Queries(movies);
         Set<String> actualOutput = queries.actorsWhoPlayedThemselves();
