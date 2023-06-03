@@ -24,11 +24,34 @@ public class Query2Test {
         testQuery(Movies.all(), "(director not included)", emptyList());
     }
 
+    @Test
+    @DisplayName("Query 2 - the query must return the correct results in the correct order")
+    public void aFewActorsFulfillTheRequirement() {
+        testQuery(
+                Movies.all(),
+                "Quentin Tarantino",
+                List.of(
+                        "Brad Pitt",
+                        "Bruce Willis",
+                        "Christoph Waltz",
+                        "Diane Kruger",
+                        "Eli Roth",
+                        "Harvey Keitel",
+                        "Jamie Foxx",
+                        "John Travolta",
+                        "Kerry Washington",
+                        "Leonardo DiCaprio",
+                        "Michael Fassbender",
+                        "Mélanie Laurent",
+                        "Samuel L. Jackson",
+                        "Uma Thurman",
+                        "Ving Rhames"));
+    }
+
     private static void testQuery(
-        Collection<Movie> movies,
-        String ditector,
-        List<String> expectedOutput
-    ) {
+            Collection<Movie> movies,
+            String ditector,
+            List<String> expectedOutput) {
         Queries queries = new Queries(movies);
 
         List<String> actualOutput = queries.ActorsWhoActedInDirectorsMoviesAlphabetically(ditector);

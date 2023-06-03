@@ -47,7 +47,12 @@ public class Queries {
     * has their names as one of the items on the field `directors` in the same movies.</p>
     */
     public List<String> ActorsWhoActedInDirectorsMoviesAlphabetically(String director) {
-        return emptyList(); // TODO: Implement.
+        return movies.stream()
+                .filter(movie -> movie.directors.contains(director))
+                .flatMap(movie -> movie.actors.stream())
+                .distinct()
+                .sorted()
+                .collect(Collectors.toList());
     }
 
     /**
