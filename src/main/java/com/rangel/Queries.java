@@ -1,6 +1,9 @@
 package com.rangel;
 
 import static java.util.Collections.emptySet;
+
+import java.util.AbstractMap;
+
 import static java.util.Collections.emptyList;
 import static java.util.Collections.emptyMap;
 
@@ -80,6 +83,12 @@ public class Queries {
     * set of movies that fit the category of the correspondent key.</p>
     */
     public Map<String, Set<Movie>> moviesReleasedInTheYearGroupedByCategory(int year) {
-        return emptyMap(); // TODO: Implement (bônus).
+        return movies.stream()
+                .filter(movie -> movie.releaseYear == year)
+                .flatMap(movie -> movie.categories.stream()
+                        .map(category -> new AbstractMap.SimpleEntry<>(category, movie)))
+                .collect(
+                        Collectors.groupingBy(AbstractMap.SimpleEntry::getKey,
+                                Collectors.mapping(AbstractMap.SimpleEntry::getValue, Collectors.toSet())));
     }
 }
