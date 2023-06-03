@@ -18,6 +18,16 @@ public class Query4Test {
         testQuery(emptySet(), 2021, emptyMap());
     }
 
+    @Test
+    @DisplayName("Query 4 - the query must return an empty map when n movie fulfills the requirement")
+    public void noMovieFulfillsTheRequirement() {
+        testQuery(
+            Set.of(Movies.braveheart, Movies.inglouriousBasterds, Movies.avengersEndgame),
+            2021,
+            emptyMap()
+        );
+    }
+
     private void testQuery(
         Collection<Movie> movies,
         int releaseYear,
