@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Queries {
 
@@ -26,7 +27,14 @@ public class Queries {
     * associated with this same key.</p>
     */
     public Set<String> actorsWhoPlayedThemselves() {
-        return emptySet(); // TODO: Implement.
+        Set<String> actors = movies.stream()
+                .flatMap(movie -> movie.actors.stream())
+                .collect(Collectors.toSet());
+
+        return movies.stream()
+                .flatMap(movie -> movie.actorsPerCharacter.keySet().stream())
+                .filter(actor -> actors.contains(actor))
+                .collect(Collectors.toSet());
     }
 
     /**
