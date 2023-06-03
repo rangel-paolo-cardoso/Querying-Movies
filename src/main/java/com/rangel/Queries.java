@@ -64,7 +64,12 @@ public class Queries {
     * at least one of the items on the field `directors` is also an item on the field campo `actors`.</p>
     */
     public List<Movie> moviesInWhichAtLeastOneDirectorActedMostRecentFirst() {
-        return emptyList(); // TODO: Implement.
+        return movies.stream()
+                .filter(movie -> movie.directors.stream()
+                        .anyMatch(director -> movie.actors.contains(director)))
+                .distinct()
+                .sorted((m1, m2) -> m2.releaseYear - m1.releaseYear)
+                .collect(Collectors.toList());
     }
 
     /**

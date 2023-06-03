@@ -28,6 +28,15 @@ public class Query3Test {
         );
     }
 
+    @Test
+    @DisplayName("Query 3 - the query must return the correct result in the correct order")
+    public void aFewMoviesFulfillTheRequirement() {
+        testQuery(
+            Movies.all(),
+            List.of(Movies.rockyII, Movies.braveheart, Movies.theGreatDictator)
+        );
+    }
+
     private static void testQuery(Collection<Movie> movies, List<Movie> expectedOutput) {
         Queries queries = new Queries(movies);
         List<Movie> actualOutput = queries.moviesInWhichAtLeastOneDirectorActedMostRecentFirst();

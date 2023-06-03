@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Movie {
+public class Movie implements Comparable<Movie> {
 
     public final String title;
     public final int releaseYear;
@@ -48,5 +48,10 @@ public class Movie {
     @Override
     public String toString() {
         return String.format("%s (%d)", title, releaseYear);
+    }
+
+    @Override
+    public int compareTo(Movie other) {
+        return Integer.compare(this.releaseYear, other.releaseYear);
     }
 }
