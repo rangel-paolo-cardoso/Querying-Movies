@@ -45,6 +45,8 @@ public class Query3Test {
         long countingBraveHeart = results.stream()
                 .filter(movie -> movie.equals(Movies.braveheart))
                 .count();
+
+        assertEquals(1, countingBraveHeart);
     }
 
     private static void testQuery(Collection<Movie> movies, List<Movie> expectedOutput) {
