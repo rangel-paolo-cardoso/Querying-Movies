@@ -43,23 +43,23 @@ public class Queries {
     }
 
     /**
-    * Consulta 3: a partir da coleção de filmes desta classe, este método retorna a lista de filmes
-    * em que pelo menos um dos diretores tenha atuado. A lista retornada está disposta em ordem de
-    * lançamento, com os filmes mais recentes no início.
+    * Query 3: from the movies collection in this class, this method returns the list of movies 
+    * in which at least one of the directors has played. The returned list must be arranged in order of 
+    * release, with the most recent movies at the beginning.
     *
-    * <p>Considera-se "filmes em que pelo menos um dos diretores tenha atuado" aqueles em que
-    * pelo menos um dos itens do campo `diretores` também é um item do campo `atores`.</p>
+    * <p>It is considered that "movies in which at least one director has played" are those in which 
+    * at least one of the items on the field `directors` is also an item on the field campo `actors`.</p>
     */
     public List<Movie> moviesInWhichAtLeastOneDirectorActedMostRecentFirst() {
         return emptyList(); // TODO: Implement.
     }
 
     /**
-    * Consulta 4: a partir da coleção de filmes desta classe, este método retorna um Map contendo
-    * todos os filmes lançados em um determinado ano agrupados por categoria.
+    * Query 4: from the movies collection in this class, this method returns a Map containing 
+    * all the movies released in a particular year are grouped by category.
     *
-    * <p>Cada chave do Map representa uma categoria, enquanto cada valor representa o
-    * conjunto de filmes que se encaixam na categoria da chave correspondente.</p>
+    * <p>Each key on the Map represents a category, whereas each value represents the 
+    * set of movies that fit the category of the correspondent key.</p>
     */
     public Map<String, Set<Movie>> moviesReleasedInTheYearGroupedByCategory(int year) {
         return emptyMap(); // TODO: Implement (bônus).
