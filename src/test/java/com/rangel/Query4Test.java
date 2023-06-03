@@ -56,6 +56,22 @@ public class Query4Test {
                                 Movies.spaceJam2021)));
     }
 
+    @Test
+    @DisplayName("Query 4 - a movie that fulfills the requirements and belongs to more than one category must appear"
+            + " em todas elas")
+    public void multiplasCategorias() {
+        Set<Movie> movies = Set.of(Movies.spiderManNoWayHome);
+        Queries queries = new Queries(movies);
+        Map<String, Set<Movie>> atualOutput = queries.moviesReleasedInTheYearGroupedByCategory(2021);
+
+        Map<String, Set<Movie>> expectedOutput = Map.of(
+                "Action", Set.of(Movies.spiderManNoWayHome),
+                "Adventure", Set.of(Movies.spiderManNoWayHome),
+                "SiFi", Set.of(Movies.spiderManNoWayHome));
+
+        assertEquals(expectedOutput, atualOutput);
+    }
+
     private void testQuery(
             Collection<Movie> movies,
             int releaseYear,
